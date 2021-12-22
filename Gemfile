@@ -67,3 +67,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "foreman", "~> 0.87.2"
