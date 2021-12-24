@@ -1,0 +1,21 @@
+# create your drupal and postgres config here, based off the last assignment
+version: '2'
+
+services:
+  rails:
+    build: .
+    image: rails
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - rails-postgres:/var/lib/postgresql/data
+volumes:
+  rails-postgres:
